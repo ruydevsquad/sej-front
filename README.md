@@ -4,11 +4,15 @@
 
 Docker
 
-    docker run -it -v /var/www:/var/www --name vuejs -p 80:8080 alpine
+    docker run --name sejf-front -it -v /var/www:/var/www -p 8080:8080 alpine
 
 In container
 
     apk add --update --upgrade git nodejs nodejs-npm && npm install -g yarn vue-cli
+
+Run Nginx in Production
+
+    docker run --name sej-server -v /var/www/sej-front/dist:/usr/share/nginx/html:ro -p 80:80 -d nginx
 
 ## Build Setup
 

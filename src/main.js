@@ -23,7 +23,7 @@ Vue.i18n.set('enUS')
 Vue.use(Vuetify, {
   theme: {
     primary: colors.lightBlue.darken3,
-    secondary: colors.grey.darken1,
+    secondary: colors.orange.darken1,
     accent: colors.shades.black,
     error: colors.red.accent3
   }

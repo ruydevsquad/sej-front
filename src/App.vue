@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       :mini-variant="miniVariant"
       :clipped="clipped"
       v-model="drawer"
@@ -22,7 +22,7 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-toolbar app :clipped-left="clipped">
       <!-- <v-container wrap> -->
         <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -35,7 +35,7 @@
         <v-btn icon @click.stop="fixed = !fixed">
           <v-icon>remove</v-icon>
         </v-btn> -->
-        <v-toolbar-title><router-link to="home" ><img src="/static/img/header-logo.png" alt="Siegfried & Jensen"></router-link></v-toolbar-title>
+        <v-toolbar-title><router-link to="home" ><img style="width: 80%;" src="/static/img/header-logo.png" alt="Siegfried & Jensen"></router-link></v-toolbar-title>
         <v-spacer></v-spacer>
         <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
           <v-icon>menu</v-icon>
@@ -47,9 +47,7 @@
         </v-toolbar-items>
         <!-- </v-container> -->
     </v-toolbar>
-    <br />
-    <div>teste</div>
-    <v-toolbar app dark color="primary" class="toolbar-home-blue hidden-sm-and-down white--text" fixed="false">
+    <v-toolbar app dark color="primary" class="toolbar-home-blue hidden-sm-and-down white--text" >
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn flat to="/about-us">{{ 'About Us' | translate }}</v-btn>
@@ -61,10 +59,26 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
     </v-toolbar>
+    <div class="hidden-sm-and-down" style="margin-top: 45px;"></div>
     <v-content>
       <transition mode="out-in" name="fade">
         <router-view></router-view>
       </transition>
+      <v-fab-transition>
+        <v-tooltip left>
+            <v-btn
+              color="primary"
+              dark
+              fab
+              fixed
+              bottom
+              right
+              slot="activator">
+              <v-icon dark>chat</v-icon>
+            </v-btn>
+          <span>Chat</span>
+        </v-tooltip>
+      </v-fab-transition>
     </v-content>
     <v-navigation-drawer
       temporary
@@ -82,7 +96,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-footer app>
+    <v-footer>
       <span>&copy; 2017</span>
     </v-footer>
   </v-app>
